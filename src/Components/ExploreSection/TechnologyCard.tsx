@@ -16,25 +16,41 @@
 
 // export default TechnologyCard;
 
+import { useState, type Dispatch } from "react";
 import type { Itechnology } from "../../Type/Technology";
+import { MdOutlineDone } from "react-icons/md";
+import { toast } from "react-toastify";
 
 interface TechnologiesProps {
     technology: Itechnology;
+    selectedTechnologies: Itechnology[]
+    setSelectedTechnologies: Dispatch<React.SetStateAction<Itechnology[]>>
+    // isAdded: boolean
+    // setIsAdded: Dispatch<React.SetStateAction<boolean>>
 }
 
-const TechnologyCard = ({ technology }: TechnologiesProps) => {
-    // const {
-    //     name,
-    //     description,
-    //     icon,
-    //     badge,
-    //     category,
-    //     difficulty,
-    //     rating,
-    // } = technology;
+const TechnologyCard = ({ technology, selectedTechnologies, setSelectedTechnologies }: TechnologiesProps) => {
+
+    // const [isAdded, setIsAdded] = useState(false)
+    // console.log(isAdded, "from Technology");
+    const isAdded = selectedTechnologies.some(
+        selectedTechnology => selectedTechnology.id === technology.id
+    );
+    const handleAddStackBtn = () => {
+        // console.log("btn clicked");
+        if (isAdded) return;
+        // setIsAdded(true)
+        setSelectedTechnologies([
+            ...selectedTechnologies,
+            technology
+        ]);
+
+        toast.success("Added successfully")
+        // setSelectedTechnologies([...selectedTechnologies, technology])
+    }
 
     return (
-        <div className="border border-gray-200 rounded-2xl p-5">
+        <div className={`border ${isAdded ? "border border-pink-700" : "border-gray-200"}  rounded-2xl p-5`}>
             {/* logo */}
             <div className="mb-4 flex items-start justify-between">
                 <img
@@ -67,9 +83,20 @@ const TechnologyCard = ({ technology }: TechnologiesProps) => {
             </div>
 
             {/* Add to Stack button */}
-            <button className="w-full rounded-lg bg-gray-900 py-2.5 text-sm font-medium text-white transition-colors hover:bg-gray-800"
+            <button onClick={() => handleAddStackBtn()} className={`w-full rounded-lg  py-2.5 text-sm font-medium btn ${isAdded ? "btn-disabled text-pink-700 bg-pink-100 " : " text-white bg-gray-900"} `} disabled={isAdded}
             >
-                Add to Stack
+                {
+                    isAdded ? (
+                        <>
+                            <MdOutlineDone /> Added to Stack
+                        </>
+                    ) : (
+                        <>
+                            Add to Stack
+                        </>
+
+                    )
+                }
             </button>
 
 

@@ -1,6 +1,6 @@
 import { use } from "react";
 import type { Itechnology } from "../../Type/Technology";
-import TechnologyCards from "./AvailableTechnologies";
+import AvailableTechnologies from "./AvailableTechnologies";
 interface TechnologiesProps {
     technologiesPromise: Promise<Itechnology[]>
 }
@@ -16,7 +16,7 @@ const Technologies = ({ technologiesPromise }: TechnologiesProps) => {
             </div>
             <div>
                 {
-                    <TechnologyCards technologies={technologies} ></TechnologyCards>
+                    <AvailableTechnologies technologies={technologies} ></AvailableTechnologies>
                 }
             </div>
         </section>
