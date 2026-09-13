@@ -30,7 +30,7 @@ const SelectedTechnologies = ({ selectedTechnologies, setSelectedTechnologies }:
                 selectedTechnologies.length ? (
                     <>
 
-                        {/* selected stack here......... */}
+
                         <h1 className="mb-2 text-lg font-semibold text-gray-900">Your Stack</h1>
                         <p className="mb-4 text-sm leading-relaxed text-[#94A3B8] line-clamp-3">{selectedTechnologies.length} Technology Selected</p>
                         {
@@ -55,7 +55,7 @@ const SelectedTechnologies = ({ selectedTechnologies, setSelectedTechnologies }:
                     </>
                 ) : (
                     <>
-                        {/* empty stack here................ */}
+
                         <div>
                             <h1 className="mb-2 text-lg font-semibold text-gray-900">Your Stack</h1>
                             <p className="mb-4 text-sm leading-relaxed text-[#94A3B8] line-clamp-3">No technologies selected yet.</p>

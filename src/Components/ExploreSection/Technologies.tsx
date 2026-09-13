@@ -9,7 +9,7 @@ interface TechnologiesProps {
 const Technologies = ({ technologiesPromise }: TechnologiesProps) => {
     const technologies = use(technologiesPromise)
     return (
-        <section className="container m-auto border border-amber-600 mb-10 -mt-15">
+        <section className="container m-auto  mb-10 -mt-15">
             <div>
                 <h2 className="text-[#0F172A] font-extrabold text-4xl ">Explore the <span className="gradient-tech">Technologies</span></h2>
                 <p className="text-[#64748B] my-2">Pick one technology per category to build your ideal stack.</p>

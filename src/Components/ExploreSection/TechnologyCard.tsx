@@ -1,22 +1,6 @@
-// // import React from 'react'
 
-// import type { Itechnology } from "../../Type/Technology";
 
-// interface TechnologiesProps {
-//     technology: Itechnology
-// }
-
-// const TechnologyCard = ({ technology }: TechnologiesProps) => {
-//     return (
-//         <div>
-
-//         </div>
-//     );
-// };
-
-// export default TechnologyCard;
-
-import { useState, type Dispatch } from "react";
+import { type Dispatch } from "react";
 import type { Itechnology } from "../../Type/Technology";
 import { MdOutlineDone } from "react-icons/md";
 import { toast } from "react-toastify";
@@ -25,28 +9,25 @@ interface TechnologiesProps {
     technology: Itechnology;
     selectedTechnologies: Itechnology[]
     setSelectedTechnologies: Dispatch<React.SetStateAction<Itechnology[]>>
-    // isAdded: boolean
-    // setIsAdded: Dispatch<React.SetStateAction<boolean>>
+
 }
 
 const TechnologyCard = ({ technology, selectedTechnologies, setSelectedTechnologies }: TechnologiesProps) => {
 
-    // const [isAdded, setIsAdded] = useState(false)
-    // console.log(isAdded, "from Technology");
+
     const isAdded = selectedTechnologies.some(
         selectedTechnology => selectedTechnology.id === technology.id
     );
     const handleAddStackBtn = () => {
         // console.log("btn clicked");
         if (isAdded) return;
-        // setIsAdded(true)
         setSelectedTechnologies([
             ...selectedTechnologies,
             technology
         ]);
 
         toast.success("Added successfully")
-        // setSelectedTechnologies([...selectedTechnologies, technology])
+
     }
 
     return (
@@ -63,14 +44,14 @@ const TechnologyCard = ({ technology, selectedTechnologies, setSelectedTechnolog
                     {technology.badge}
                 </span>
             </div>
-            {/* Title */}
+
             <h3 className="mb-2 text-lg font-semibold text-gray-900">{technology.name}</h3>
 
-            {/* Description */}
+
             <p className="mb-4 text-sm leading-relaxed text-gray-500 line-clamp-3">
                 {technology.description}
             </p>
-            {/* category ------ */}
+
             <div className="mb-4 flex justify-between items-center text-sm">
                 <span className="rounded-md bg-gray-100 px-2 py-1 text-xs text-gray-600">
                     {technology.category}
@@ -82,7 +63,7 @@ const TechnologyCard = ({ technology, selectedTechnologies, setSelectedTechnolog
                 </span>
             </div>
 
-            {/* Add to Stack button */}
+
             <button onClick={() => handleAddStackBtn()} className={`w-full rounded-lg  py-2.5 text-sm font-medium btn ${isAdded ? "btn-disabled text-pink-700 bg-pink-100 " : " text-white bg-gray-900"} `} disabled={isAdded}
             >
                 {
