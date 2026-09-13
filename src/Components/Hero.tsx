@@ -2,7 +2,7 @@ import banner from "../assets/banner-stack.png";
 
 const Hero = () => {
     return (
-        <section className="container mx-auto  ">
+        <section className="container mx-auto p-4 md:p-0 lg;p-0  ">
 
             <div className="hero min-h-[calc(100vh-73px)]">
 
@@ -50,13 +50,13 @@ const Hero = () => {
 
 
                         {/* Buttons */}
-                        <div className="mt-8 flex flex-col sm:flex-row justify-center lg:justify-start gap-3">
+                        <div className="mt-8 flex flex-row  justify-center lg:justify-start gap-3">
 
-                            <button className="btn border-0 rounded-lg px-6 text-white primary-gradient">
+                            <button className="btn border-0 rounded-lg py-3 px-3 text-white primary-gradient">
                                 Explore Technologies
                             </button>
 
-                            <button className="btn btn-outline border-gray-200 text-gray-600 rounded-lg px-7 hover:bg-gray-50">
+                            <button className="btn btn-outline border-gray-200  py-3 px-9  text-gray-600 rounded-lg  hover:bg-gray-50">
                                 Learn More
                             </button>
 
