@@ -5,24 +5,12 @@ const Navbar = () => {
         <div className="sticky top-0 z-50 bg-white border-b border-gray-100">
             <div className="navbar container mx-auto ">
 
-                {/* Logo */}
+
                 <div className="navbar-start">
-                    {/* <div className="flex items-center gap-2">
 
-                        <div className="w-9 h-9 rounded-lg primary-gradient flex items-center justify-center text-white text-sm font-bold">
-                            DS
-                        </div>
-
-                        <span className="text-lg font-bold text-gray-900">
-                            Dev<span className="text-pink-600">Stack</span>
-                        </span>
-
-                    </div> */}
                     <img src={Logo} alt="" />
                 </div>
 
-
-                {/* Desktop Menu */}
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal gap-2 text-sm">
 
@@ -60,10 +48,9 @@ const Navbar = () => {
                 </div>
 
 
-                {/* Right Side */}
                 <div className="navbar-end">
 
-                    {/* Desktop Buttons */}
+
                     <div className="hidden sm:flex items-center gap-4">
 
                         <button className="text-sm text-gray-700 hover:text-pink-600">
@@ -77,7 +64,7 @@ const Navbar = () => {
                     </div>
 
 
-                    {/* Mobile Menu */}
+
                     <div className="dropdown dropdown-end lg:hidden">
 
                         <button

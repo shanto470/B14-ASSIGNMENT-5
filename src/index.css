@@ -3,6 +3,15 @@
 @plugin "daisyui";
 
 
+/* :root {
+  --primary-gradient: linear-gradient(
+    to right,
+    #1621f9,
+    #ec6e48,
+    #b0ea33
+  );
+} */
+
 :root {
   --primary-gradient: linear-gradient(
     to right,
