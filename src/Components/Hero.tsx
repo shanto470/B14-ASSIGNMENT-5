@@ -9,12 +9,12 @@ const Hero = () => {
                 <div className="hero-content max-w-none w-full p-0 flex-col lg:flex-row-reverse justify-between gap-12 lg:gap-20">
 
 
-                    {/* Hero Image */}
+
                     <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
 
                         <div className="relative">
 
-                            {/* Glow */}
+
                             <div className="absolute inset-0 bg-purple-500/20 blur-3xl rounded-full"></div>
 
                             <img
