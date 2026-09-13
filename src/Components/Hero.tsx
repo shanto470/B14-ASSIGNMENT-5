@@ -2,7 +2,7 @@ import banner from "../assets/banner-stack.png";
 
 const Hero = () => {
     return (
-        <section className="container mx-auto px-5 md:px-10">
+        <section className="container mx-auto  ">
 
             <div className="hero min-h-[calc(100vh-73px)]">
 

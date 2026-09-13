@@ -1,9 +1,9 @@
-import logo from "../assets/logo-text.png"
+import Logo from "../assets/logo-text.png"
 
 const Navbar = () => {
     return (
         <div className="sticky top-0 z-50 bg-white border-b border-gray-100">
-            <div className="navbar container mx-auto px-5 md:px-10">
+            <div className="navbar container mx-auto ">
 
                 {/* Logo */}
                 <div className="navbar-start">
@@ -18,7 +18,7 @@ const Navbar = () => {
                         </span>
 
                     </div> */}
-                    <img src={logo} alt="" />
+                    <img src={Logo} alt="" />
                 </div>
 
 

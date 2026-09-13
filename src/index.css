@@ -22,3 +22,14 @@
   -webkit-background-clip: text;
   color: transparent;
 }
+.gradient-tech {
+  background: linear-gradient(
+    to right,
+    #ec4899,
+    #9333ea
+  );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
