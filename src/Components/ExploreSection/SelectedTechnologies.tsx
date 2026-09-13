@@ -5,6 +5,7 @@
 import type { Dispatch } from "react";
 import type { Itechnology } from "../../Type/Technology";
 import { ImCross } from "react-icons/im";
+import { toast } from "react-toastify";
 
 interface TechnologiesProps {
     selectedTechnologies: Itechnology[]
@@ -16,11 +17,14 @@ const SelectedTechnologies = ({ selectedTechnologies, setSelectedTechnologies }:
 
     const handleRemoveBtn = () => {
         setSelectedTechnologies([])
+        toast.info("Removed All")
+
     }
-    const handleRemoverCrossBtn = (id: string) => {
+    const handleRemoverCrossBtn = (id: string, name: string) => {
         setSelectedTechnologies(selectedTechnologies.filter(
-            technology => technology.id !== id
+            technology => technology.id !== id,
         ))
+        toast.info(`Removed ${name}`)
     }
     return (
         <div className="border border-gray-200 rounded-2xl ml-8 my-5  p-5">
@@ -43,7 +47,7 @@ const SelectedTechnologies = ({ selectedTechnologies, setSelectedTechnologies }:
                                             <p className="text-[6px] font-bold text-[#94A3B8] ">{technology.category}</p>
                                         </div>
                                     </div>
-                                    <button onClick={() => handleRemoverCrossBtn(technology.id)}>
+                                    <button onClick={() => handleRemoverCrossBtn(technology.id, technology.name)}>
                                         <ImCross /></button>
                                 </div>
                             ))

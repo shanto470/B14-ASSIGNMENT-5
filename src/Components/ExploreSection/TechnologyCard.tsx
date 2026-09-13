@@ -20,7 +20,11 @@ const TechnologyCard = ({ technology, selectedTechnologies, setSelectedTechnolog
     );
     const handleAddStackBtn = () => {
         // console.log("btn clicked");
-        if (isAdded) return;
+        if (isAdded) {
+            toast.info("Duplicate add attempt");
+            // alert("Already added to stack")
+            return;
+        }
         setSelectedTechnologies([
             ...selectedTechnologies,
             technology
@@ -64,7 +68,7 @@ const TechnologyCard = ({ technology, selectedTechnologies, setSelectedTechnolog
             </div>
 
 
-            <button onClick={() => handleAddStackBtn()} className={`w-full rounded-lg  py-2.5 text-sm font-medium btn ${isAdded ? "btn-disabled text-pink-700 bg-pink-100 " : " text-white bg-gray-900"} `} disabled={isAdded}
+            <button onClick={() => handleAddStackBtn()} className={`w-full rounded-lg  py-2.5 text-sm font-medium btn ${isAdded ? " text-pink-700 bg-pink-100 " : " text-white bg-gray-900"} `}
             >
                 {
                     isAdded ? (
